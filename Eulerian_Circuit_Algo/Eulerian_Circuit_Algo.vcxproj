@@ -139,7 +139,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DirectedGraph.cpp" />
+    <ClCompile Include="DirectedGraphNode.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphFactory.cpp" />
+    <ClCompile Include="GraphNode.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="UndirectedGraph.cpp" />
+    <ClCompile Include="UndirectedGraphNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectedGraph.h" />
+    <ClInclude Include="DirectedGraphNode.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphFactory.h" />
+    <ClInclude Include="GraphNode.h" />
+    <ClInclude Include="UndirectedGraph.h" />
+    <ClInclude Include="UndirectedGraphNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
