@@ -8,7 +8,7 @@ public:
 	int GetDout() const;
 	void AddDin();
 	void AddDout();
-
+	virtual void AddNeighbor(int node2);
 	~DirectedGraphNode();
 
 private:

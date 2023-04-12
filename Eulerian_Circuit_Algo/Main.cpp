@@ -31,13 +31,22 @@ int main() {
         std::cin >> node1 >> node2;
 
         // Add the edge from node1 to node2
-        graph[node1 - 1].push_back(node2);
-        graph.AddEdge(node1,node2);
+       
+        graph->AddEdge(node1,node2);
 
-        // If the graph is undirected, also add the edge from node2 to node1
-        if (isDirected == 'n') {
-            graph[node2 - 1].push_back(node1);
-        }
+
+    }
+
+  
+
+    if (graph->IsEulerian())
+    {
+        std::cout << "yey";
+    } 
+    else
+    {
+        std::cout << "Ney";
+
     }
 
     //// Print the adjacency list

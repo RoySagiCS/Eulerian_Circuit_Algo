@@ -16,10 +16,17 @@ int DirectedGraphNode::GetDout() const
 
 void DirectedGraphNode::AddDin()
 {
+	this->m_Din++;
 }
 
 void DirectedGraphNode::AddDout()
 {
+	this->m_Dout++;
+}
+
+void DirectedGraphNode::AddNeighbor(int node2)
+{
+	this->m_Neighbors.push_back(node2);
 }
 
 DirectedGraphNode::~DirectedGraphNode()

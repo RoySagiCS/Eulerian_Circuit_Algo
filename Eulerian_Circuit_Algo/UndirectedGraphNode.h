@@ -4,8 +4,9 @@ class UndirectedGraphNode : public GraphNode
 {
 public:
 	UndirectedGraphNode(int i_nodeNumber);
-	int GetDegree() const;
+	int GetDegree();
 	void AddDegree();
+	virtual void AddNeighbor(int node2);
 	~UndirectedGraphNode();
 
 private:

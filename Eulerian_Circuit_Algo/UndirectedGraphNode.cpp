@@ -3,13 +3,19 @@ UndirectedGraphNode::UndirectedGraphNode(int i_nodeNumber) : GraphNode(i_nodeNum
 {
 }
 
-int UndirectedGraphNode::GetDegree() const
+int UndirectedGraphNode::GetDegree()
 {
-	return 0;
+	return this->m_NodeDegree;
 }
 
 void UndirectedGraphNode::AddDegree()
 {
+	this->m_NodeDegree++;
+}
+
+void UndirectedGraphNode::AddNeighbor(int node2)
+{
+	this->m_Neighbors.push_back(node2);
 }
 
 UndirectedGraphNode::~UndirectedGraphNode()

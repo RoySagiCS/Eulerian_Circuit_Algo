@@ -9,6 +9,59 @@ UndirectedGraph::UndirectedGraph(int i_NumberOfNodes) : Graph(i_NumberOfNodes)
 	}
 }
 
+void UndirectedGraph::AddEdge(int node1, int node2)
+{
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node1])->AddNeighbor(node2);
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node2])->AddNeighbor(node1);
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node1])->AddDegree();
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node2])->AddDegree();
+}
+
+bool UndirectedGraph::IsEulerian()
+{
+	this->Visit(1);
+	if (!(this->IsConnected()))
+	{
+		return false;
+	}
+	if (!AreAllDegreesEven())
+	{
+		return false;
+	}
+	return true;
+}
+
+bool UndirectedGraph::AreAllDegreesEven()
+{
+	std::vector<GraphNode*>::iterator it = this->m_Graph.begin();
+	it++;
+
+	for (it; it != this->m_Graph.end(); it++)
+	{
+		if (static_cast<UndirectedGraphNode*>(*it)->GetDegree() %2 == 1)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+bool UndirectedGraph::IsConnected()
+{
+	std::vector<GraphNode*>::iterator it = this->m_Graph.begin();
+	it++;
+	for (it ; it != this->m_Graph.end(); it++)
+	{
+		if ((*it)->GetColour() == WHITE)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+
+
 UndirectedGraph::~UndirectedGraph()
 {
 }

@@ -9,6 +9,26 @@ int GraphNode::GetNodeNumber()  const
 	return this->m_nodeNumber;
 }
 
+void GraphNode::AddNeighbor(int node2)
+{
+
+}
+
+e_Colour GraphNode::GetColour()
+{
+	return this->m_CurrentColour;
+}
+
+void GraphNode::SetColour(e_Colour i_newColour)
+{
+	this->m_CurrentColour = i_newColour;
+}
+
+std::list<int> GraphNode::GetNeighborsList()
+{
+	return this->m_Neighbors;
+}
+
 GraphNode::~GraphNode()
 {
 }
