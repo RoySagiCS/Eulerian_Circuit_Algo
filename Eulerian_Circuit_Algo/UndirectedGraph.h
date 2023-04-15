@@ -10,6 +10,13 @@ public:
 	virtual bool IsEulerian();
 	bool AreAllDegreesEven();
 	bool IsConnected();
+	virtual void MarkUsedEdge(int v, int u);
+	virtual	void CopyEdge(int node1, int node2);
+	void AddCopiedEdge(int node1, int node2);
+
+
+
+
 	~UndirectedGraph();
 
 private:

@@ -6,12 +6,12 @@ DirectedGraphNode::DirectedGraphNode(int i_nodeNumber) : GraphNode(i_nodeNumber)
 
 int DirectedGraphNode::GetDin() const
 {
-	return 0;
+	return this->m_Din;
 }
 
 int DirectedGraphNode::GetDout() const
 {
-	return 0;
+	return this->m_Dout;
 }
 
 void DirectedGraphNode::AddDin()

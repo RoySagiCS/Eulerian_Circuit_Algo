@@ -17,6 +17,7 @@ public:
 	e_Colour GetColour();
 	void SetColour(e_Colour i_newColour);
 	std::list<int> GetNeighborsList();
+	void RemoveNeighbor(int i_NeighborToRemove);
 	~GraphNode();
 
 protected:

@@ -60,7 +60,23 @@ bool UndirectedGraph::IsConnected()
 	return true;
 }
 
+void UndirectedGraph::MarkUsedEdge(int v, int u)
+{
+	this->m_Graph[v]->RemoveNeighbor(u); 
+	this->m_Graph[u]->RemoveNeighbor(v);
 
+}
+
+void UndirectedGraph::CopyEdge(int node1, int node2)
+{
+	this->AddCopiedEdge(node1, node2);
+}
+
+void UndirectedGraph::AddCopiedEdge(int node1, int node2)
+{
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node1])->AddNeighbor(node2);
+	static_cast<UndirectedGraphNode*>(this->m_Graph[node1])->AddDegree();
+}
 
 UndirectedGraph::~UndirectedGraph()
 {

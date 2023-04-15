@@ -29,6 +29,19 @@ std::list<int> GraphNode::GetNeighborsList()
 	return this->m_Neighbors;
 }
 
+void GraphNode::RemoveNeighbor(int i_NeighborToRemove)
+{
+	std::list<int>::iterator it = this->m_Neighbors.begin();
+	for (it; it != this->m_Neighbors.end(); ++it) {
+
+		if (*it == i_NeighborToRemove)
+		{
+			this->m_Neighbors.erase(it);
+			break;
+		}
+	}
+}
+
 GraphNode::~GraphNode()
 {
 }

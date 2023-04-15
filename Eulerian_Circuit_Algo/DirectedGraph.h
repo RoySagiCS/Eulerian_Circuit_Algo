@@ -10,6 +10,9 @@ public:
 	bool IsStronglyConnected();
 	bool IsDinDoutEqual();
 	void CreateTransposeGraph();
+	virtual void MarkUsedEdge(int v, int u);
+	virtual void CopyEdge(int node1, int node2);
+
 	~DirectedGraph();
 
 private:

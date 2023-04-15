@@ -78,6 +78,16 @@ void DirectedGraph::CreateTransposeGraph()
 
 }
 
+void DirectedGraph::MarkUsedEdge(int v, int u)
+{
+	this->m_Graph[v]->RemoveNeighbor(u);
+}
+
+void DirectedGraph::CopyEdge(int node1, int node2)
+{
+	this->AddEdge(node1,node2);
+}
+
 bool DirectedGraph::IsDinDoutEqual()
 {
 	std::vector<GraphNode*>::iterator it = this->m_Graph.begin();
